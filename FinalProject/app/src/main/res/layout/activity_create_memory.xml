@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateMemoryActivity">
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true">
+
+            <ImageView
+                android:id="@+id/imageBack"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageSave"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_done"
+                app:layout_constraintBottom_toBottomOf="@id/imageBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/imageBack" />
+
+            <EditText
+                android:id="@+id/inputMemoryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="12dp"
+                android:hint="Memory Title"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:textSize="15dp"
+                app:layout_constraintTop_toBottomOf="@id/imageBack" />
+
+            <TextView
+                android:id="@+id/textDateTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/inputMemoryTitle"
+                app:layout_constraintStart_toStartOf="@id/inputMemoryTitle"
+                app:layout_constraintTop_toBottomOf="@id/inputMemoryTitle" />
+
+            <ImageView
+                android:id="@+id/imageMemory"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="12dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/textDateTime"
+                app:layout_constraintStart_toStartOf="@id/inputMemoryTitle"
+                tools:ignore="MissingConstraints" />
+
+
+            <EditText
+                android:id="@+id/inputMemoryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="12dp"
+                android:gravity="top"
+                android:hint="Type memory text..."
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:minHeight="100dp"
+                android:textSize="13dp"
+
+                app:layout_constraintTop_toBottomOf="@id/imageMemory"
+                tools:layout_editor_absoluteX="12dp" />
+
+            <EditText
+                android:id="@+id/inputMemoryLocation"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="12dp"
+                android:hint="Memory Location"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:textSize="15dp"
+                app:layout_constraintTop_toBottomOf="@id/inputMemoryText"  />
+            <EditText
+                android:id="@+id/inputMemoryPassword"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="12dp"
+                android:hint="Password"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textPassword"
+                android:textSize="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/inputMemoryLocation"  />
+
+
+
+
+
+            <LinearLayout
+                android:id="@+id/layoutAddImage"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/inputMemoryPassword"
+                app:layout_constraintStart_toStartOf="@id/inputMemoryPassword"
+                app:layout_constraintBottom_toTopOf="@id/layoutMap"
+                >
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_baseline_image_24"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Add Image"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutMap"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/layoutShare"
+                app:layout_constraintStart_toStartOf="@id/inputMemoryPassword"
+                app:layout_constraintTop_toBottomOf="@id/layoutAddImage">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_baseline_map_24_siyah" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="See the location" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutShare"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/layoutMap"
+                app:layout_constraintBottom_toTopOf="@+id/layoutDeleteMemory"
+                app:layout_constraintStart_toStartOf="@id/inputMemoryPassword"
+                >
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_baseline_share_24"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Share"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutDeleteMemory"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/layoutShare"
+                app:layout_constraintStart_toStartOf="@id/inputMemoryPassword"
+
+                >
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_baseline_delete_forever_24"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Delete Memory"
+                    android:textColor="@color/red"/>
+
+
+            </LinearLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
